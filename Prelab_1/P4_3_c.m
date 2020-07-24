@@ -1,0 +1,14 @@
+t=linspace(0,0.1,1000);
+h=0.1*exp(-1000*t).*heaviside(t);
+y=0.1*((1-exp(-1000*t)).*heaviside(t)-(1-exp(-1000*(t-10^(-3)))).*heaviside(t-10^(-3)));
+plot(t,y,t,h);
+axis([0 0.005 0 0.1]);
+legend('y(t)','h(t)');
+y=0.2*((1-exp(-1000*t)).*heaviside(t)-(1-exp(-1000*(t-0.5*10^(-3)))).*heaviside(t-0.5*10^(-3)));
+plot(t,y,t,h);
+axis([0 0.005 0 0.1]);
+legend('y(t)','h(t)');
+y=(1-exp(-1000*t)).*heaviside(t)-(1-exp(-1000*(t-0.1*10^(-3)))).*heaviside(t-0.1*10^(-3));
+plot(t,y,t,h);
+axis([0 0.005 0 0.1]);
+legend('y(t)','h(t)');
